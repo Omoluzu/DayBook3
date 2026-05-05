@@ -1,8 +1,17 @@
 cmake_minimum_required(VERSION 3.16)
 project(DayBook3 LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+set(CMAKE_AUTOMOC ON)
 
-add_executable(DayBook3 main.cpp)
+find_package(Qt6 REQUIRED COMPONENTS
+    Widgets
+)
 
-target_link_libraries(DayBook3 PRIVATE Qt6::Widgets)
+add_executable(DayBook3
+    src/app/main.cpp
+    src/app/MainWindow.cpp
+)
+
+target_link_libraries(DayBook3 PRIVATE
+    Qt6::Widgets
+)
