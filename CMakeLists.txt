@@ -7,11 +7,14 @@ find_package(Qt6 REQUIRED COMPONENTS
     Widgets
 )
 
+add_subdirectory(src/modules/spreadsheet)
+
 add_executable(DayBook3
     src/app/main.cpp
     src/app/MainWindow.cpp
 )
 
 target_link_libraries(DayBook3 PRIVATE
+    spreadsheet_lib
     Qt6::Widgets
 )

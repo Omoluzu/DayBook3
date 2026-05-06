@@ -1,4 +1,5 @@
 #include "MainWindow.h"
+#include "spreadsheet/gui/SpreadsheetView.h"
 #include <QHeaderView>
 
 
@@ -7,14 +8,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);
 
-    table = new QTableWidget(centralWidget);
-    table->setColumnCount(3);
-    table->setHorizontalHeaderLabels(QStringList() << "1" << "2" << "3");
-    table->setRowCount(3);
-
-    table->horizontalHeader()->setStretchLastSection(true);
-    table->setSelectionBehavior(QAbstractItemView::SelectRows);
-    table->setAlternatingRowColors(true);
+    table = new SpreadsheetView(centralWidget);
 
     layout = new QVBoxLayout(centralWidget);
     layout->addWidget(table);
