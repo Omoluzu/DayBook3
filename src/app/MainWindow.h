@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTableWidget>
+#include <QTabWidget>
 #include <QVBoxLayout>
 #include <QWidget>
 
@@ -16,9 +17,10 @@ public:
     ~MainWindow();
 
 private:
-    QTableWidget *table;
+    QWidget *spreadsheet;
     QWidget *centralWidget;
     QVBoxLayout *layout;
+    QTabWidget *tab;
 };
 
 #endif

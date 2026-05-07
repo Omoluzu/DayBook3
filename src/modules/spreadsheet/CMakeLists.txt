@@ -2,10 +2,12 @@ project(spreadsheet_lib)
 
 set(SOURCES
     src/gui/SpreadsheetView.cpp
+    src/gui/MainSpreadsheet.cpp
 )
 
 set(HEADERS
     include/spreadsheet/gui/SpreadsheetView.h
+    include/spreadsheet/gui/MainSpreadsheet.h
 )
 
 add_library(spreadsheet_lib STATIC ${SOURCES} ${HEADERS})
