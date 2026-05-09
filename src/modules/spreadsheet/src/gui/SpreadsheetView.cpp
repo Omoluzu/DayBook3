@@ -9,7 +9,7 @@ SpreadsheetView::SpreadsheetView(QWidget *parent) : QTableWidget(parent)
     this->setRowCount(3);
 
     this->horizontalHeader()->setStretchLastSection(true);
-    this->setSelectionBehavior(QAbstractItemView::SelectRows);
+    this->setSelectionBehavior(QAbstractItemView::SelectItems);
     this->setAlternatingRowColors(true);
 }
 

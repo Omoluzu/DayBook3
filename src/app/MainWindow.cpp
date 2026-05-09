@@ -1,5 +1,5 @@
 #include "MainWindow.h"
-#include "spreadsheet/gui/MainSpreadsheet.h"
+#include "spreadsheet/SpreadsheetModule.h"
 #include <QHeaderView>
 
 
@@ -8,10 +8,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);
 
-    spreadsheet = new MainSpreadsheet(centralWidget);
+    auto spreadsheetModule = std::make_unique<Spreadsheet::SpreadsheetModule>();
+    spreadsheetModule->initialize();
 
     tab = new QTabWidget(centralWidget);
-    tab->addTab(spreadsheet, "Table");
+    tab->addTab(spreadsheetModule->mainWidget(), "Table");
     tab->setTabPosition(QTabWidget::TabPosition::West);
 
     layout = new QVBoxLayout(centralWidget);

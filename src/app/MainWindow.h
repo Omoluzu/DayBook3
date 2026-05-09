@@ -6,6 +6,7 @@
 #include <QTabWidget>
 #include <QVBoxLayout>
 #include <QWidget>
+#include <QObject>
 
 
 class MainWindow : public QMainWindow
@@ -17,7 +18,7 @@ public:
     ~MainWindow();
 
 private:
-    QWidget *spreadsheet;
+    QObject *spreadsheet;
     QWidget *centralWidget;
     QVBoxLayout *layout;
     QTabWidget *tab;

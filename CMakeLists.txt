@@ -4,6 +4,7 @@ project(DayBook3 LANGUAGES CXX)
 set(CMAKE_AUTOMOC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS
+    Core
     Widgets
 )
 
@@ -16,5 +17,6 @@ add_executable(DayBook3
 
 target_link_libraries(DayBook3 PRIVATE
     spreadsheet_lib
+    Qt6::Core
     Qt6::Widgets
 )
